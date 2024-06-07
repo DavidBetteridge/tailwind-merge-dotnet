@@ -29,14 +29,3 @@ public partial class ColorsClasses2Tests
     
     private static partial TailwindClass Example1_Rhs() => new("bg-hotpink text-white");
 }
-
-public class TailwindClass(string classList)
-{
-    public static TailwindClass operator +(TailwindClass a, TailwindClass b)
-    {
-        var twMerge = new TwMerge();
-        return new TailwindClass(twMerge.Merge(a.ToString(), b.ToString()));
-    }
-
-    public override string ToString() => classList;
-}
