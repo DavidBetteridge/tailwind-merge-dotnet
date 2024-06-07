@@ -26,4 +26,8 @@
 	  <ProjectReference Include="..\src\TailwindMerge.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\TailwindGenerator\TailwindGenerator\TailwindGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+	</ItemGroup>
+	
 </Project>

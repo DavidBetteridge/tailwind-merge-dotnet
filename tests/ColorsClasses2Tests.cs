@@ -14,18 +14,7 @@ public partial class ColorsClasses2Tests
     
     [GeneratedTailwindClass( "bg-hotpink text-white" )]
     private static partial TailwindClass Example1_Rhs();
-}
-
-internal class GeneratedTailwindClassAttribute : Attribute
-{
-    public GeneratedTailwindClassAttribute(string classList)
-    {
-    }
-}
-
-public partial class ColorsClasses2Tests
-{
-    private static partial TailwindClass Example1_Lhs() => new("hover:inline bg-grey-5");
     
-    private static partial TailwindClass Example1_Rhs() => new("bg-hotpink text-white");
+    [GeneratedTailwindClass( "bg-hotpink text-white" )]
+    private static partial TailwindClass Example2_Rhs();
 }
