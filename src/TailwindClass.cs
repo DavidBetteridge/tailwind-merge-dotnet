@@ -1,10 +1,12 @@
+using TailwindMerge.Models;
+
 namespace TailwindMerge;
 
 /// <summary>
 /// This class wraps a list of tailwind class names
 /// </summary>
 /// <param name="classList"></param>
-public class TailwindClass(string classList)
+public class TailwindClass(string classList, ClassInfo[] classes)
 {
     /// <summary>
     /// Combines two list of tailwind class names.  Note addition over TailwindClasses
@@ -17,7 +19,7 @@ public class TailwindClass(string classList)
     {
         // Quick and dirty solution
         var twMerge = new TwMerge();
-        return new TailwindClass(twMerge.Merge(lhs.ToString(), rhs.ToString()));
+        return new TailwindClass(twMerge.Merge(lhs.ToString(), rhs.ToString()), []);
     }
 
     /// <summary>

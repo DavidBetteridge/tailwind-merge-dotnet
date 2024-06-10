@@ -1,6 +1,6 @@
 ﻿namespace TailwindMerge.Models;
 
-internal readonly record struct ClassInfo(
+public readonly record struct ClassInfo(
     string Name,
     string? GroupId,
     string? ModifierId,
