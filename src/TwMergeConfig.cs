@@ -1551,7 +1551,7 @@ internal class TwMergeConfig
         new ClassGroup( "forced-color-adjust", "forced-color-adjust", _autoAndNone ),
     ];
 
-    private static readonly Dictionary<string, string[]> _conflictingClassGroups = new( 46 )
+    internal static readonly Dictionary<string, string[]> ConflictingClassGroupsLookup = new( 46 )
     {
         ["overflow"] = ["overflow-x", "overflow-y"],
         ["overscroll"] = ["overscroll-x", "overscroll-y"],
@@ -1652,7 +1652,7 @@ internal class TwMergeConfig
         ["touch-pz"] = ["touch"]
     };
 
-    private static readonly Dictionary<string, string[]> _conflictingClassGroupModifiers = new( 1 )
+    internal static readonly Dictionary<string, string[]> ConflictingClassGroupModifiersLookup = new( 1 )
     {
         ["font-size"] = ["leading"]
     };
@@ -1669,8 +1669,8 @@ internal class TwMergeConfig
         CacheSize = 500;
         Separator = ":";
         ClassGroups = _classGroups;
-        ConflictingClassGroups = _conflictingClassGroups.AsReadOnly();
-        ConflictingClassGroupModifiers = _conflictingClassGroupModifiers.AsReadOnly();
+        ConflictingClassGroups = ConflictingClassGroupsLookup.AsReadOnly();
+        ConflictingClassGroupModifiers = ConflictingClassGroupModifiersLookup.AsReadOnly();
     }
 
     internal static TwMergeConfig Default()
