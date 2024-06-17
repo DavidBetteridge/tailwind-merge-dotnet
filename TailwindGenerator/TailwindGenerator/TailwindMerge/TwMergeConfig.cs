@@ -1,4 +1,6 @@
-﻿using TailwindMerge.Common;
+﻿using System;
+using System.Collections.Generic;
+using TailwindMerge.Common;
 using TailwindMerge.Models;
 
 namespace TailwindMerge;
@@ -1551,7 +1553,7 @@ internal class TwMergeConfig
         new ClassGroup( "forced-color-adjust", "forced-color-adjust", _autoAndNone ),
     ];
 
-    internal static readonly Dictionary<string, string[]> ConflictingClassGroupsLookup = new( 46 )
+    private static readonly Dictionary<string, string[]> _conflictingClassGroups = new( 46 )
     {
         ["overflow"] = ["overflow-x", "overflow-y"],
         ["overscroll"] = ["overscroll-x", "overscroll-y"],
@@ -1652,7 +1654,7 @@ internal class TwMergeConfig
         ["touch-pz"] = ["touch"]
     };
 
-    internal static readonly Dictionary<string, string[]> ConflictingClassGroupModifiersLookup = new( 1 )
+    private static readonly Dictionary<string, string[]> _conflictingClassGroupModifiers = new( 1 )
     {
         ["font-size"] = ["leading"]
     };
@@ -1669,8 +1671,8 @@ internal class TwMergeConfig
         CacheSize = 500;
         Separator = ":";
         ClassGroups = _classGroups;
-        ConflictingClassGroups = ConflictingClassGroupsLookup.AsReadOnly();
-        ConflictingClassGroupModifiers = ConflictingClassGroupModifiersLookup.AsReadOnly();
+        ConflictingClassGroups = _conflictingClassGroups;
+        ConflictingClassGroupModifiers = _conflictingClassGroupModifiers;
     }
 
     internal static TwMergeConfig Default()
